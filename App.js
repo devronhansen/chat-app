@@ -5,7 +5,7 @@ import ReversedFlatList from 'react-native-reversed-flat-list';
 import Header from './Header';
 
 const NAME = 'Ron';
-const CHANNEL = 'natalie123';
+const CHANNEL = 'TESTCHAT';
 const AVATAR = 'https://pbs.twimg.com/profile_images/806501058679816192/ZHFWIF-z_400x400.jpg';
 
 export default class App extends React.Component {
@@ -21,8 +21,9 @@ export default class App extends React.Component {
                 <ReversedFlatList data={this.state.messages} renderItem={this.renderItem}/>
                 <KeyboardAvoidingView behavior="padding">
                     <View style={styles.footer}>
+
+
                         <TextInput
-                            autoCorrect={false}
                             value={this.state.typing}
                             onChangeText={text => this.setState({typing: text})}
                             style={styles.input}
@@ -37,7 +38,6 @@ export default class App extends React.Component {
             </View>
         );
     }
-
     renderItem({item}) {
         return (
             <View style={styles.row}>
